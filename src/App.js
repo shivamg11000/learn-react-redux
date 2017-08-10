@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import AddTodo from './Components/AddTodo/AddTodo';
 import VisualTodoList from './Containers/VisualTodoList';
+import FilterLinks from './Components/FilterLinks/FilterLinks';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <h1>React-Redux todo</h1>
         <AddTodo />
         <VisualTodoList />
+        <FilterLinks />
       </div>
     );
   }
