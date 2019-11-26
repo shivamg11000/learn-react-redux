@@ -1,22 +1,23 @@
-let nextTodoId = 0;
 
-export const addTodo = text => ({
-    type: "ADD_TODO",
-    id: nextTodoId++,
+import actions from '../enums/actionTypes';
+
+const addTodo = (text) => ({
+    type: actions.ADD_TODO,
     text
 })
 
-export const deleteTodo = id => ({
-    type: "DELETE_TODO",
+const deleteTodo = (id) => ({
+    type: actions.DELETE_TODO,
     id
 })
 
-export const toggleTodo = id => ({
-    type: "TOGGLE_TODO",
+const toggleTodo = (id) => ({
+    type: actions.TOGGLE_TODO,
     id
 })
 
-export const setVisibilityFilter = filter => ({
-    type: "SET_VISIBILITY_FILTER",
-    filter
-})
+export default {
+    addTodo,
+    deleteTodo,
+    toggleTodo
+}

@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import TodoApp from "./Components/todoApp";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
-import AddTodo from './Components/AddTodo/AddTodo';
-import VisualTodoList from './Containers/VisualTodoList';
-import FilterLinks from './Components/FilterLinks/FilterLinks';
+// reducer
+import reducer from "./reducers";
 
-class App extends Component {
-  render() {
+// create store 
+const store = createStore(reducer);
+
+class App extends Component{
+  render(){
     return (
       <div className="App">
-        <h1>React-Redux todo</h1>
-        <AddTodo />
-        <VisualTodoList />
-        <FilterLinks />
-      </div>
+        <Provider store={store}>
+          <TodoApp/>
+        </Provider>
+      </div>  
     );
   }
 }
